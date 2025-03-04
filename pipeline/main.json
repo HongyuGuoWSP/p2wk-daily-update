@@ -1,0 +1,131 @@
+{
+	"name": "main",
+	"properties": {
+		"activities": [
+			{
+				"name": "Request report",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"method": "POST",
+					"url": {
+						"value": "https://api.tomtom.com/traffic/trafficstats/routeanalysis/1?key=cNfXSFxp0Pgi1gtKVHAQzpW8adwfsipP",
+						"type": "Expression"
+					},
+					"body": {
+						"value": "{\"jobName\":\"P2WK Monitoring (@{pipeline().parameters.Date})\",\"routes\":[{\"name\":\"P2WK - SH1 NB\",\"start\":{\"latitude\":-36.58406,\"longitude\":174.66506},\"via\":[],\"end\":{\"latitude\":-36.38717,\"longitude\":174.64158},\"probeSource\":\"ALL\",\"fullTraversal\":false,\"zoneId\":\"Pacific/Auckland\"},{\"name\":\"P2WK - SH1 SB\",\"start\":{\"latitude\":-36.38789,\"longitude\":174.64218},\"via\":[],\"end\":{\"latitude\":-36.58456,\"longitude\":174.66512},\"probeSource\":\"ALL\",\"fullTraversal\":false,\"zoneId\":\"Pacific/Auckland\"},{\"name\":\"P2WK - Old NB\",\"start\":{\"latitude\":-36.58406,\"longitude\":174.66506},\"via\":[{\"latitude\":-36.510132,\"longitude\":174.671229}],\"end\":{\"latitude\":-36.38668,\"longitude\":174.6413},\"probeSource\":\"ALL\",\"fullTraversal\":false,\"zoneId\":\"Pacific/Auckland\"},{\"name\":\"P2WK - Old SB\",\"start\":{\"latitude\":-36.38789,\"longitude\":174.64218},\"via\":[{\"latitude\":-36.415006,\"longitude\":174.655724}],\"end\":{\"latitude\":-36.58456,\"longitude\":174.66512},\"probeSource\":\"ALL\",\"fullTraversal\":false,\"zoneId\":\"Pacific/Auckland\"}],\"dateRanges\":[{\"name\":\"@{pipeline().parameters.Date}\",\"from\":\"@{pipeline().parameters.Date}\",\"to\":\"@{pipeline().parameters.Date}\",\"exclusions\":[],\"excludedDaysOfWeek\":[]}],\"timeSets\":[{\"name\":\"0:00-1:00\",\"timeGroups\":[{\"days\":[\"MON\",\"TUE\",\"WED\",\"THU\",\"FRI\",\"SAT\",\"SUN\"],\"times\":[\"0:00-1:00\"]}]},{\"name\":\"1:00-2:00\",\"timeGroups\":[{\"days\":[\"MON\",\"TUE\",\"WED\",\"THU\",\"FRI\",\"SAT\",\"SUN\"],\"times\":[\"1:00-2:00\"]}]},{\"name\":\"2:00-3:00\",\"timeGroups\":[{\"days\":[\"MON\",\"TUE\",\"WED\",\"THU\",\"FRI\",\"SAT\",\"SUN\"],\"times\":[\"2:00-3:00\"]}]},{\"name\":\"3:00-4:00\",\"timeGroups\":[{\"days\":[\"MON\",\"TUE\",\"WED\",\"THU\",\"FRI\",\"SAT\",\"SUN\"],\"times\":[\"3:00-4:00\"]}]},{\"name\":\"4:00-5:00\",\"timeGroups\":[{\"days\":[\"MON\",\"TUE\",\"WED\",\"THU\",\"FRI\",\"SAT\",\"SUN\"],\"times\":[\"4:00-5:00\"]}]},{\"name\":\"5:00-6:00\",\"timeGroups\":[{\"days\":[\"MON\",\"TUE\",\"WED\",\"THU\",\"FRI\",\"SAT\",\"SUN\"],\"times\":[\"5:00-6:00\"]}]},{\"name\":\"6:00-7:00\",\"timeGroups\":[{\"days\":[\"MON\",\"TUE\",\"WED\",\"THU\",\"FRI\",\"SAT\",\"SUN\"],\"times\":[\"6:00-7:00\"]}]},{\"name\":\"7:00-8:00\",\"timeGroups\":[{\"days\":[\"MON\",\"TUE\",\"WED\",\"THU\",\"FRI\",\"SAT\",\"SUN\"],\"times\":[\"7:00-8:00\"]}]},{\"name\":\"8:00-9:00\",\"timeGroups\":[{\"days\":[\"MON\",\"TUE\",\"WED\",\"THU\",\"FRI\",\"SAT\",\"SUN\"],\"times\":[\"8:00-9:00\"]}]},{\"name\":\"9:00-10:00\",\"timeGroups\":[{\"days\":[\"MON\",\"TUE\",\"WED\",\"THU\",\"FRI\",\"SAT\",\"SUN\"],\"times\":[\"9:00-10:00\"]}]},{\"name\":\"10:00-11:00\",\"timeGroups\":[{\"days\":[\"MON\",\"TUE\",\"WED\",\"THU\",\"FRI\",\"SAT\",\"SUN\"],\"times\":[\"10:00-11:00\"]}]},{\"name\":\"11:00-12:00\",\"timeGroups\":[{\"days\":[\"MON\",\"TUE\",\"WED\",\"THU\",\"FRI\",\"SAT\",\"SUN\"],\"times\":[\"11:00-12:00\"]}]},{\"name\":\"12:00-13:00\",\"timeGroups\":[{\"days\":[\"MON\",\"TUE\",\"WED\",\"THU\",\"FRI\",\"SAT\",\"SUN\"],\"times\":[\"12:00-13:00\"]}]},{\"name\":\"13:00-14:00\",\"timeGroups\":[{\"days\":[\"MON\",\"TUE\",\"WED\",\"THU\",\"FRI\",\"SAT\",\"SUN\"],\"times\":[\"13:00-14:00\"]}]},{\"name\":\"14:00-15:00\",\"timeGroups\":[{\"days\":[\"MON\",\"TUE\",\"WED\",\"THU\",\"FRI\",\"SAT\",\"SUN\"],\"times\":[\"14:00-15:00\"]}]},{\"name\":\"15:00-16:00\",\"timeGroups\":[{\"days\":[\"MON\",\"TUE\",\"WED\",\"THU\",\"FRI\",\"SAT\",\"SUN\"],\"times\":[\"15:00-16:00\"]}]},{\"name\":\"16:00-17:00\",\"timeGroups\":[{\"days\":[\"MON\",\"TUE\",\"WED\",\"THU\",\"FRI\",\"SAT\",\"SUN\"],\"times\":[\"16:00-17:00\"]}]},{\"name\":\"17:00-18:00\",\"timeGroups\":[{\"days\":[\"MON\",\"TUE\",\"WED\",\"THU\",\"FRI\",\"SAT\",\"SUN\"],\"times\":[\"17:00-18:00\"]}]},{\"name\":\"18:00-19:00\",\"timeGroups\":[{\"days\":[\"MON\",\"TUE\",\"WED\",\"THU\",\"FRI\",\"SAT\",\"SUN\"],\"times\":[\"18:00-19:00\"]}]},{\"name\":\"19:00-20:00\",\"timeGroups\":[{\"days\":[\"MON\",\"TUE\",\"WED\",\"THU\",\"FRI\",\"SAT\",\"SUN\"],\"times\":[\"19:00-20:00\"]}]},{\"name\":\"20:00-21:00\",\"timeGroups\":[{\"days\":[\"MON\",\"TUE\",\"WED\",\"THU\",\"FRI\",\"SAT\",\"SUN\"],\"times\":[\"20:00-21:00\"]}]},{\"name\":\"21:00-22:00\",\"timeGroups\":[{\"days\":[\"MON\",\"TUE\",\"WED\",\"THU\",\"FRI\",\"SAT\",\"SUN\"],\"times\":[\"21:00-22:00\"]}]},{\"name\":\"22:00-23:00\",\"timeGroups\":[{\"days\":[\"MON\",\"TUE\",\"WED\",\"THU\",\"FRI\",\"SAT\",\"SUN\"],\"times\":[\"22:00-23:00\"]}]},{\"name\":\"23:00-24:00\",\"timeGroups\":[{\"days\":[\"MON\",\"TUE\",\"WED\",\"THU\",\"FRI\",\"SAT\",\"SUN\"],\"times\":[\"23:00-24:00\"]}]}],\"distanceUnit\":\"KILOMETERS\",\"mapVersion\":\"2023.12.000\",\"acceptMode\":\"AUTO\",\"averageSampleSizeThreshold\":0,\"tags\":[\"P2WK Monitoring\"]}",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "Wait for TomTom report",
+				"type": "Wait",
+				"dependsOn": [
+					{
+						"activity": "Request report",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"waitTimeInSeconds": 300
+				}
+			},
+			{
+				"name": "Until1",
+				"type": "Until",
+				"dependsOn": [
+					{
+						"activity": "Wait for TomTom report",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"expression": {
+						"value": "@equals(activity('Check Report').output.jobState, 'DONE')",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Check report",
+							"type": "WebActivity",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"method": "GET",
+								"url": {
+									"value": "https://api.tomtom.com/traffic/trafficstats/status/1/@{activity('Request report').output.jobId}?key=cNfXSFxp0Pgi1gtKVHAQzpW8adwfsipP",
+									"type": "Expression"
+								}
+							}
+						}
+					],
+					"timeout": "0.12:00:00"
+				}
+			},
+			{
+				"name": "Data download and upload",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "Until1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/nzhg32163itc@wsp.com/Data download and upload",
+					"baseParameters": {
+						"Report body": {
+							"value": "@string(activity('Check Report').output)",
+							"type": "Expression"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "p2wk",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"parameters": {
+			"Date": {
+				"type": "string",
+				"defaultValue": "2024-01-01"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2024-12-20T06:04:21Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

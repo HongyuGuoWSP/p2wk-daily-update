@@ -1,0 +1,9 @@
+{
+	"name": "p2wk-daily-update",
+	"location": "australiaeast",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "d997aa0f-5792-400a-a4e4-8b05c801de8b",
+		"tenantId": "3d234255-e20f-4205-88a5-9658a402999b"
+	}
+}

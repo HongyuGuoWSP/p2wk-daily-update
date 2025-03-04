@@ -1,0 +1,32 @@
+{
+	"name": "daily_run",
+	"properties": {
+		"activities": [
+			{
+				"name": "Execute Pipeline1",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "main",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"Date": {
+							"value": "@{formatDateTime(addDays(utcnow(), -2), 'yyyy-MM-dd')}",
+							"type": "Expression"
+						}
+					}
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2024-12-17T19:48:43Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
